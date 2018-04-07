@@ -1,0 +1,324 @@
+\documentclass{article} 
+
+\usepackage{amsmath,amsthm,amssymb}
+
+\newtheorem{problem}{Problem} 
+
+\theoremstyle{definition} 
+
+\newtheorem*{solution}{Solution} 
+
+\begin{document} \title{Assignment 1} 
+
+\author{Weishi Wang, ID 260540022} 
+
+\date{\today}
+
+\maketitle
+
+\begin{problem} 
+Combinatorics. Three families have decided to go on vacation together. Family A has 1
+adult and 2 children, Family B has 3 adults and 6 children, and Family C has 2 adults and 4
+children.\\
+
+(a) It's time to board the plane! In how many ways can the whole group line up together to
+present their tickets if every family must stay together?\\
+
+(b) Five rooms have been reserved for the families at their hotel. In how many ways can the
+rooms be assigned if no more than 4 people are allowed in a room? What if we require
+at least one adult in each room?\\
+
+(c) For each of the five days the families are on vacation, they will be given a stack of 18
+towels. Each family will get their towels in a matching colour and no two families have
+the same colour on the same day. How many different ways could the towels be presented
+to them over the five days if the hotel carries 7 different colours of towel? What if Family
+A insists that it does not receive the same colour on consecutive days?\\
+
+(d) This afternoon, the families have a chance to go on an excursion. In how many ways
+could a group be formed to go if it must have at least 2 adults and 2 children?\\
+
+(e) It's dinner time. A large circular table is reserved to seat all 18 vacationers. How
+many different seating arrangements are there if rotations are ignored? In other words,
+if everyone seated gets up and moves k seats to the left, it's still considered the same
+seating arrangement. What if the children from Family B insist on sitting consecutively?\\
+
+(f) It's time for the stage show! A hypnotist invites 5 of the vacationers onstage to occupy
+5 chairs. How many possible seating arrangements are there? What if we insist that at
+least one member from each family must go on stage?\\
+
+(g) Time for the vacation photo! Unfortunately, Family C has had a falling out over who
+was to blame for puncturing the inflatable unicorn in the pool. How many ways can the
+vacationers line up for the photo if no two members of Family C are next to one another?\\\\\\
+
+\end{problem}
+\begin{solution}
+(a) Family A has 3 people, therefore, the ways to line up family A are \(3! = 3\times2\times1\) = 6.
+
+Family B has 9 people, therefore the ways to line up family B are \(9! = 9\times8\times7...\times3\times2\times1 = 362880\).
+
+Family C has 6 people, therefore the ways to line up family C are \(6! = 6\times5\times4...\times2\times1 = 720\).
+
+Since the family members need to stick together, therefore, the ways to place the 3 families are \(3! = 6\).
+
+The total ways to line up the 3 families are: \(6\times362880\times720\times6 = 9405849600\).\\\\\\
+
+(b) There are 2 cases:\\
+
+1. One room has 2 people and 4 rooms have 4 people.
+
+The possible ways are: \(5\choose1\)\(18\choose2\)\(16\choose4\)\(12\choose4\)\(8\choose4\)\(4\choose4\)
+
+2. Two room has 3 people and 3 rooms have 4 people.
+
+The possible ways are: \(5\choose2\)\(18\choose3\)\(15\choose3\)\(12\choose4\)\(8\choose4\)\(4\choose4\)\\
+
+The total possible ways are the sum of the two possibilities:
+
+\(5\choose1\)\(18\choose2\)\(16\choose4\)\(12\choose4\)\(8\choose4\)\(4\choose4\) +  \(5\choose2\)\(18\choose3\)\(15\choose3\)\(12\choose4\)\(8\choose4\)\(4\choose4\) \(= 1.76891715\times10^{10}\)\\\\
+
+
+Now, if every room has to have an adult, there are still two cases:
+
+1. One room of 2 people and 4 rooms of 4 people, each room at least 1 adult:
+
+\(6!\)\(5\choose1\)\(13\choose1\)\(12\choose3\)\(9\choose3\)\(6\choose3\)\(3\choose3\)
+
+1. One room of 2 people and 4 rooms of 4 people, each room at least 1 adult:
+
+\(6!\)\(5\choose2\)\(13\choose2\)\(11\choose2\)\(9\choose3\)\(6\choose3\)\(3\choose3\)\\
+
+The total ways are: \(6!\)\(5\choose1\)\(13\choose1\)\(12\choose3\)\(9\choose3\)\(6\choose3\)\(3\choose3\) + \(6!\)\(5\choose2\)\(13\choose2\)\(11\choose2\)\(9\choose3\)\(6\choose3\)\(3\choose3\)\( = 6.918912\times10^{10}\)\\\\\\
+
+
+(c) For each day, we give 3 different sets of towels from 7 colors, and we do this for 5 days, so:
+
+The first family has 7 choices, and the second family has 6 choices, the third has 5 choices. The same for the rest of the days. 
+
+Therefore, \({(7\times6\times5)}^5 = 4.084101\times10^{11}\) 
+
+
+
+If family A does not want the same colour for consecutive days, so A has 7 choices on the first day, 6 choices on the following days:
+
+\((7\times6\times5) \times {(6\times6\times5)}^4\)\(= 2.204496\times10^{11}\)\\\\
+
+(d) First, we choose 2 adults form 6, and then we choose 2 children form 12.
+
+That is \(6\choose2\)\(12\choose2\)
+
+Then, there are 14 people left. Each one can either go or not, so there are \(2^{14}\) possible ways.
+
+Therefore, \(6\choose2\)\(12\choose2\)\(\times 2^{14} = 16220160\)\\\\
+
+(e) If rotation is ignored, then we can think that there is one people that is fixed at the beginning.
+
+So the total ways of sitting is \(17! = 3.556874281\times10^{14}\)\\\\
+
+If the children form family B insist on sitting together, we can see the 6 children as one person.
+
+Then, we have 13 people instead of 18, so the ways to sit is \(12!\)
+
+However, the order of sitting between children in B does matter. There are \(6!\) ways to sit for them.
+
+The total ways of sitting is: \(12!\times6! = 3.44881152\times 10^{11}\)\\\\
+
+(f) If we invite 5 people to sit, then we have to choose 5 people form 18. Then we need to order them.
+
+Therefore, \(18\choose5\)\(\times 5!\) = 1028160\\\\
+
+Now, if we choose at least one from each family, we have some possibilities:
+
+1. 3A 1B 1C: \(9\choose1\)\(6\choose1\) = 54
+
+2. 1A 3B 1C: \(3\choose1\)\(9\choose3\)\(6\choose1\) = 1512
+
+3. 1A 1B 3C: \(3\choose1\)\(9\choose1\)\(6\choose3\) = 540
+
+4. 1A 2B 2C: \(3\choose1\)\(9\choose2\)\(6\choose2\) = 1620
+
+5. 2A 1B 2C: \(3\choose2\)\(9\choose1\)\(6\choose2\) = 405
+
+6. 2A 2B 1C: \(3\choose2\)\(9\choose2\)\(6\choose1\) = 648
+
+Then, we order the chosen 5 people, and we add all cases together:
+
+[\(9\choose1\)\(6\choose1\)+ \(3\choose1\)\(9\choose3\)\(6\choose1\)+\(3\choose1\)\(9\choose1\)\(6\choose3\)+\(3\choose1\)\(9\choose2\)\(6\choose2\)+\(3\choose2\)\(9\choose1\)\(6\choose2\)+\(3\choose2\)\(9\choose2\)\(6\choose1\)]\(\times 5!\) \(= (54+1512+540+1620+405+648)\times 5! = 933480\)\\\\
+
+
+(g) No 2 members of C can be next to each other, let's order the rest people first. There are 12 people without C. The ways to order them is \(12!\)
+
+Now, we can place each member of C between the gaps of other people. Since there are 12 people, there must be 13 gaps.
+
+We choose 6 gap from 13 gaps, and we put member of C in there with order, which is \(13\choose6\)\(\times 6!\).
+
+The total ways is then, \(12! \times\)\(13\choose6\)\(\times 6! = 5.918160568\times 10^{14}\)\\\\\\
+
+\end{solution}
+
+
+
+
+
+
+
+
+
+\begin{problem}
+More combinatorics. Consider the unit grid below (i.e. each square has unit length). A
+path between two points is a sequence of line segments which follow the grid (an example is
+shown).\\
+
+(a) How many paths are there from A to D if you can only move right or up?\\
+
+(b) How many of the paths from (a) pass through the point B?\\
+
+(c) How many paths from (a) have the property that every vertical segment has length
+exactly 1?\\
+
+(d) How many paths are there from A to D if you never move left and your path never
+revisits itself?\\
+
+(e) How many paths from (d) are there which pass through C?\\
+
+(f) How many paths from (d) have the property that you use exactly 5 horizontal line
+segments?\\
+
+(g) How many paths from (f) have the property that no horizontal segment has length 1?\\\\
+
+
+\end{problem}
+
+
+
+
+
+
+
+
+\begin{solution}
+(a) We need to move 9 to the up and 14 to the right. Each move to the up are repeated and each move to the right are repeated as well.
+
+Therefore, \(\frac{23!}{9!14!} = 817190\)\\\\
+
+(b) From point A to B: \(\frac{8!}{5!3!} = 56\)\\
+
+From point B to D: \(\frac{15!}{6!9!} = 5005\)\\
+
+The total ways are: \(56\times 5005 = 280280\)\\\\
+
+(c) Every vertical segment has the length of exactly one. This means that no to up move can be consecutive. There are 14 move to the right, therefore there are 15 gaps, and we insert 9 vertical moves in these gap.
+
+Therefore, \(15\choose9\)\( = 5005\)\\\\
+
+(d) There are 15 rows, and we have 15 choice for 14 columns:
+
+\(15^{14} = 2.919292603\times10^{16}\)\\\\
+
+(e) There are 2 cases, if C is reached from left:
+
+From A to C, there are 8 columns, but the last one must be at the left of C, so we have 15 choice for 7 columns: \(15^8\)
+
+Then, from C to D. since we reached C from left, all other point in the same column as C can still be chosen.
+
+So we have 15 choice for 6 columns: \(15^6\).
+
+The total ways are: \(15^{14} = 2.91929^{16}\)
+
+if C is reached from up or down:
+
+the total ways are: \(15^{9}15^5 = 2.91929^{16}\)
+
+So the total ways are: \(2.91929^{16}\times 2 = 5.838585205\times10^{16}\)\\\\
+
+(f) 5 horizontal line segments. There are 14 units in the horizontal line. The way to chose is \(13\choose4\)\( = 715\)
+
+Now, to place these 5 segments in vertical length, no 2 segments can be next to each other.
+
+So there are \(15\times14^{4}\)
+
+So, \(13\choose4\)\(\times\)\(15\times14^{4}\)\(=412011600\)\\\\
+
+
+(g) No segment of length 1. At least 2 in each segment:
+
+1. 2 2 2 2 6 : \(\frac{14!}{6!2!2!2!2!} = 7567560\)
+
+2. 2 2 2 3 5: \(\frac{14!}{5!3!2!2!2!} = 15135120\)
+
+3. 2 2 2 4 4: \(\frac{14!}{4!4!2!2!2!} = 18918900\)
+
+4. 2 2 3 3 4: \(\frac{14!}{3!3!4!2!2!} = 25225200\)
+
+5. 2 3 3 3 3:  \(\frac{14!}{3!3!3!3!2!} = 33633600\)
+
+The total is 100480380.\\\\\\
+
+\end{solution}
+
+
+
+
+
+\begin{problem}
+Proving identities . Let m be a fixed positive integer, and let n be an arbitrary integer such that \(n \geq m\). Prove\\
+
+\(P(n,m)2^{n-m} = \sum_{k=m}^{n}{{n}\choose{k}}P(k,m)\)\\
+
+(a) by a combinatorial argument;
+
+(b) by using the Binomial Theorem.\\
+
+Two notes on part (b):
+
+You will need some calculus.
+
+If you make a claim about something being true for all positive integers, you must prove it.
+
+
+
+\end{problem}
+
+
+\begin{solution}
+(a) we can look at this problem this way:
+
+LHS: There are a committee of size greater or equal to m, with m distinct roles within the committee.
+Then P(n,m) is the ways to choose m committee form n and assign specific roles to these m people.
+The \(2^{n-m}\) is whether the rest of the people joint the committee.\\
+
+RHS: The size of the committee is k, (between m and n) and we give m task to these k people, which means that m people get a task, and the rest k-m do not have a task.\\
+
+The LHS and RHS is exactly the same thing.\\\\
+
+(b) LHS = \(P(n,m)2^{n-m} = \frac{n!}{m!}2^{n-m}\)
+
+\( = \frac{n!}{m!}(1+1)^{n-m}\)
+\( =\frac{n!}{m!} \sum_{k=0}^{n-m}{\frac{(n-m)!}{(n-k)!(k-m)!}}\)\\\\
+
+
+RHS = \(\sum_{k=m}^{n}{n\choose{k}}P(k,m)\)
+
+= \(\sum_{k=m}^{n}{\frac{n!}{k!(n-k)!}}{\frac{k!}{(k-m)!}}\)
+
+= \(\sum_{k=m}^{n}{\frac{n!}{(n-k)!(k-m)!}}\)
+
+= \(n!\sum_{k=m}^{n}{\frac{1}{(n-k)!(k-m)!}}\)
+
+= \(\frac{n!}{m!}\sum_{k=0}^{n-m}{\frac{(n-m)!}{(n-k)!(k-m)!}}\)\\
+
+Therefore, LHS=RHS, and we are done.
+
+
+
+
+
+
+
+\end{solution}
+
+
+
+
+
+
+\end{document}

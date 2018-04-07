@@ -1,0 +1,391 @@
+\documentclass{article} 
+
+\usepackage{amsmath,amsthm,amssymb}
+
+\newtheorem{problem}{Problem} 
+
+\theoremstyle{definition} 
+
+\newtheorem*{solution}{Solution} 
+
+\begin{document} \title{Assignment 3} 
+
+\author{Weishi Wang, ID 260540022} 
+
+\date{\today}
+
+\maketitle
+
+\begin{problem} 
+
+\textbf{Proofs with sets.} Let A, B, C be arbitrary sets. For each of the following statements, either prove it is true (without a Venn diagram) or give a counterexample to show that it is false.
+
+(a) (A\(\setminus\)B) \(\setminus\)C = A \(\setminus\) (B \(\cup\)C)
+
+(b) ( A \(\oplus\) B = A \(\oplus\) C and A \(\cap\) B = A \(\cap\) C) \(\Rightarrow\) B = C
+
+(c) (A \(\cup\) B) \(\times\) ( C \(\cup\) D) = ( A \(\times\) C) \(\cup\) (B \(\times\) D)\\\\
+
+\end{problem}
+
+\begin{solution}
+(a) let x \(\in\)  (A\(\setminus\)B) \(\setminus\) C
+
+\(\Leftrightarrow\) x \(\in\)  (A\(\setminus\)B) and x \(\notin\) C
+
+\(\Leftrightarrow\) x \(\in\) A and x \(\notin\) B and x \(\notin\) C
+
+\(\Leftrightarrow\) x \(\in\) A and x \(\notin\) (B \(\cup\) C)
+
+\(\Leftrightarrow\) x \(\in\) A \(\setminus\) (B \(\cup\) C)
+
+So (A\(\setminus\)B)\(\setminus\)C = A\(\setminus\)(B\(\cup\)C).\\\\
+
+
+
+
+(b) A \(\oplus\) B = (A\(\setminus\) (A\(\cap\)B)) \(\cup\) (B\(\setminus\) (A\(\cap\)B))
+
+A \(\oplus\) B = (A\(\cup\)B) \(\setminus\) (A\(\cap\)B)
+
+Similarily,
+
+A \(\oplus\) C = (A\(\cup\)C) \(\setminus\) (A\(\cap\)C)
+
+Since A \(\oplus\) B = A \(\oplus\) C,
+
+ (A\(\cup\)B) \(\setminus\) (A\(\cap\)B) = (A\(\cup\)C) \(\setminus\) (A\(\cap\)C)
+ 
+ [(A\(\cup\)B) \(\setminus\) (A\(\cap\)B)] \(\cup\) (A\(\cap\)B) = [(A\(\cup\)C) \(\setminus\) (A\(\cap\)C)] \(\cup\) (A\(\cap\)B)
+ 
+ Since A\(\cap\)B = A\(\cap\)C
+ 
+  [(A\(\cup\)B) \(\setminus\) (A\(\cap\)B)] \(\cup\) (A\(\cap\)B) = [(A\(\cup\)C) \(\setminus\) (A\(\cap\)C)] \(\cup\) (A\(\cap\)C)
+  
+(A\(\cup\)B) = (A\(\cup\)C)
+
+Now, take the difference of set A in both sides.
+
+A\(\cup\)B) \(\setminus\) A = (A\(\cup\)C) \(\setminus\) A
+
+Then take the union of (A\(\cap\)B) on both side.
+
+[A\(\cup\)B) \(\setminus\) A] \(\cup\) (A\(\cap\)B) = [(A\(\cup\)C) \(\setminus\) A] \(\cup\) (A\(\cap\)B)
+
+Again, since A\(\cap\)B = A\(\cap\)C, we can write this as,
+
+[(A\(\cup\)B) \(\setminus\) A] \(\cup\) (A\(\cap\)B) = [(A\(\cup\)C) \(\setminus\) A] \(\cup\) (A\(\cap\)C)\\
+
+Where the left hand side can be reduced to:
+
+[(A\(\cup\)B) \(\setminus\) A] \(\cup\) (A\(\cap\)B) = [(A\(\setminus\)A) \(\cup\) (B\(\setminus\)A)] \(\cup\) (A\(\cap\)B)]
+
+= [\(\o\) \(\cup\) (B\(\setminus\) A)] \(\cup\) (A\(\cap\)B)
+
+= (B\(\setminus\) A) \(\cup\) (A\(\cap\)B)
+
+= [(B\(\setminus\) A) \(\cup\) A] \(\cap\) [(B\(\setminus\) A) \(\cup\) B] 
+
+= (B\(\cup\)A) \(\cap\) B)
+
+= B\\
+
+And similarly, the right hand side is exactly C : [A\(\cup\)C) \(\setminus\) A] \(\cup\) (A\(\cap\)C) = C\\
+
+Moreover, since LHS = RHS
+
+\(\Rightarrow\) B = C.
+
+Thus,  ( A \(\oplus\) B = A \(\oplus\) C and A \(\cap\) B = A \(\cap\) C) \(\Rightarrow\) B = C\\\\
+
+
+
+(c) let (x,y) \(\in\) (A\(\cup\)B) \(\times\) (C\(\cup\)D)
+
+\(\Rightarrow\) x \(\in\) (A\(\cup\)B) and y \(\in\) (C\(\cup\)D)
+
+So, 
+
+if x \(\in\) A, y \(\in\) C, we have (x,y) \(\in\) (A\(\times\)C)
+
+if x \(\in\) A, y \(\in\) D, we have (x,y) \(\in\) (A\(\times\)D)
+
+if x \(\in\) B, y \(\in\) C, we have (x,y) \(\in\) (B\(\times\)C)
+
+if x \(\in\) B, y \(\in\) D, we have (x,y) \(\in\) (B\(\times\)D)
+
+Therefore, (x,y) \(\in\) [(A \(\times\) C) \(\cup\) (A \(\times\) D) \(\cup\) (B \(\times\) C) \(\cup\) (B \(\times\) D)]
+
+So the statement is wrong.\\
+
+Let's find an counterexample:
+
+Suppose A = \{1\}, B = \{2\}, C = \{3\}, D = \{4\}
+
+Then,
+
+A\(\cup\)B = \{1,2\} and C\(\cup\)D = \{3,4\}
+
+and (A\(\cup\)B) \(\times\) (C\(\cup\)D) = \{(1,3), (1,4), (2,3), (2,4)\}\\
+
+However, (A \(\times\) C) = \{(1,3)\} and (B \(\times\) D) = \{(2,4)\}
+
+Thus, (A \(\times\) C)\(\cup\)(B \(\times\) D) = \{(1,3), (2,4)\}\\
+
+
+Therefore, (A \(\cup\) B) \(\times\) ( C \(\cup\) D) \(\neq\) ( A \(\times\) C) \(\cup\) (B \(\times\) D)\\\\
+
+
+\end{solution}
+
+\begin{problem}
+\textbf{Relations.}
+
+(a) Determine whether or not each relation is reflexive, symmetric, antisymmetric, and/ or transitive. For each property, if the relation has that property, prove it.
+If it doesn't have that property, give a counterexample. State if the relation is a total order, partial order but not a total order, or neither; justify your answer.
+
+i. R = \{(X,Y) \(\in\) (P(A))\(^2\) \(|\) X\(\cap\)Y \(\neq\) \(\o\)\}
+
+ii. R = \{(a,b) \(\in\) \(\mathbb{N}^2\) \(|\) a divides b\} (a divides b means that there is some integer k such that b=ka)
+
+(b) For a, b \(\in\) \(\mathbb{R}\)\(\setminus\)\{0\}, define a \(\sim\) b iff \(\frac{a}{b}\) \(\in\) \(\mathbb{Q}\). Prove that \(\sim\) defines an equivalence relation on \(\mathbb{R}\)\(\setminus\)\ \{0\}. Show that [\(\frac{9-\sqrt{5}}{1-\sqrt{5}}\)] =  [\(\frac{2}{3-6\sqrt{5}}\)] .\\\\
+\end{problem}
+
+
+\begin{solution}
+(a) 
+
+i.) X \(\subseteq\) P(A) and Y \(\subseteq\) P(A)\\
+
+Reflexivity: if X = \(\o\),
+
+Then, X \(\cap\) X = \(\o\)
+	
+Therefore, not reflexive.\\
+
+	
+Symmetry: if X \(\cap\) Y \(\neq\) \(\o\)
+
+Then, Y \(\cap\) X \(\neq\) \(\o\)
+
+Thus, symmetric.\\
+
+
+Transitivity: if X \(\cap\) Y \(\neq\) \(\o\) and Y \(\cap\) Z \(\neq\) \(\o\)
+
+X \(\cap\) Z \(\neq\) \(\o\) does not necessarily hold. Here is a counterexample,
+
+Let A =\{1,2\}
+
+Then P(A) = \{\(\o\),\{1\},\{2\},\{1,2\}\}
+
+Let X = \{1\}, Y = \{1,2\} and Z = \{2\}
+
+X \(\cap\) Y = \{1\} which is not \(\o\)
+
+Y \(\cap\) Z = \{2\} which is not \(\o\) neither
+
+However, X \(\cap\) Z = \(\o\)
+
+Thus, not transitive.\\
+
+
+Antisymmetry: if X \(\cap\) Y \(\neq\) \(\o\) and Y \(\cap\) X \(\neq\) \(\o\)
+
+X = Y does not necessarily hold. Here is a counterexample,
+
+Let A = \{1,2,3\}
+
+then let X = \{1,2\} and Y = \{2,3\}
+
+X \(\cap\) Y = \{2\} which is not the empty set
+
+Y \(\cap\) X = \{2\} which is not the empty set neither
+
+However, X \(\neq\) Y.
+
+Therefore, it is not antisymmetric.\\
+
+Since it is symmetric, but not reflexive, transitive and antisymmetric, it is neither a partial order nor a total order.\\
+
+
+ii.) Reflexibility: (a,a) means that a \(|\) a, where k = 1, and it is always true.
+
+Thus, reflexive.\\
+
+
+Symmetry: if a \(|\) b, then b = ka, k \(\in\) \(\mathbb{Z}\)
+
+Then, a = \(\frac{1}{k}\)b where \(\frac{1}{k}\) is not an integer.
+
+Therefore, (b,a) does not satisfy the condition.
+
+Thus, not symmetric.\\
+
+
+Transtivity: if a \(|\) b and b \(|\) c
+
+Then b = ka and c = qb where k,q \(\in\) \(\mathbb{Z}\)
+
+therefore, c = kqa, kq \(\in\) \(\mathbb{Z}\)
+
+which means that a \(|\) c.
+
+Thus, transitive.\\
+
+Antisymmetry: if a divides b and b divides a, then
+
+a = kb and b = qa, k,q\(\in\) \(\mathbb{Z}\)
+
+a = kb = \(\frac{1}{q}\)b
+
+so k = \(\frac{1}{q}\), and they both need to be integer.
+
+\(\Rightarrow\) k = q = 1
+
+Therefore a = b, and it is indeed antisymmetric.\\
+
+Therefore, it is reflexive, transitive, and antisymmetric but not symmetric. It is therefore a partial order, but not a total order.\\
+
+
+
+(b) The relation R = \{(a,b)\(|\) \(\frac{a}{b}\) \(\in\) \(\mathbb{Q}\)\}
+
+Reflexivity: \(\forall\) a \(\in\) \(\mathbb{R}\)\(\setminus\)\{0\} \(\frac{a}{a}\)=1, which is a rational number
+
+Thus (a,a) \(\in\) R, so it is reflexive.\\
+
+Symmetry: (a,b) \(\in\) R means that \(\frac{a}{b}\) \(\in\) \(\mathbb{Q}\), which implies that a, b\(\in\) \(\mathbb{Z}\)
+
+Since a, b \(\in\) \(\mathbb{Z}\), then \(\frac{b}{a}\) \(\in\) \(\mathbb{Q}\)
+
+Thus, (b,a)\(\in\) R, so it is symmetric.\\
+
+Transitivity: if (a,b) \(\in\) \(\mathbb{Q}\) and (b,c) \(\in\) \(\mathbb{Q}\)
+
+then a,b,c \(\in\) \(\mathbb{Z}\)
+
+So \(\frac{a}{c}\) \(\in\) \(\mathbb{Q}\), and (a,c) \(\in\) R.
+
+Thus, it is transitive.\\
+
+The relation is reflexive, symmetric, and transitive. Therefore it is equivalent.\\
+
+
+[\(\frac{9-\sqrt{5}}{1-\sqrt{5}}\)] = [\(\frac{3-6\sqrt{5}}{2}\)] implies:
+
+(\(\frac{9-\sqrt{5}}{1-\sqrt{5}}\)) \(\sim\) (\(\frac{3-6\sqrt{5}}{2}\))
+
+Then, we need to prove that \(\frac{\frac{9-\sqrt{5}}{1-\sqrt{5}}}{\frac{3-6\sqrt{5}}{2}}\) is a rational number.
+
+ \(\frac{\frac{9-\sqrt{5}}{1-\sqrt{5}}}{\frac{3-6\sqrt{5}}{2}}\)\\
+ 
+ = \(\frac{9-\sqrt{5}}{1-\sqrt{5}}\) \(\cdot\) \(\frac{2}{3-6\sqrt{5}}\)\\
+ 
+ = \(\frac{27-3\sqrt{5}-54\sqrt{5}+30}{2-2\sqrt{5}}\)\\
+ 
+ = \(\frac{57-57\sqrt{5}}{2-2\sqrt{5}}\)\\
+ 
+ = \(\frac{57(1-\sqrt{5})}{2(1-\sqrt{5})}\)\\
+ 
+ = \(\frac{57}{2}\)\\
+ 
+As 57 and 2 are integers, we can say that \(\frac{57}{2}\) \(\in\) \(\mathbb{Q}\), and (\(\frac{9-\sqrt{5}}{1-\sqrt{5}}\)) \(\sim\) (\(\frac{3-6\sqrt{5}}{2}\)).
+
+Therefore [\(\frac{9-\sqrt{5}}{1-\sqrt{5}}\)] = [\(\frac{3-6\sqrt{5}}{2}\)].\\\\\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+\end{solution}
+
+\begin{problem}
+
+\textbf{Proof techniques.} Prove the following statements using the method of your choice (direct proof, proof of the contrapositive, proof by contradiction).
+
+(a) Let a,b \(\in\) \(\mathbb{R}\). If a \(\in\) \(\mathbb{Q}\) and b \(\notin\) \(\mathbb{Q}\), then a \(\pm\) b \(\notin\) \(\mathbb{Q}\).
+
+(b) If the average of 4 distinct integers is 10, then at least one of the integers is greater than 11.\\\\
+
+\end{problem}
+
+\begin{solution}
+
+(a) This can be proven using proof by contradiction.
+
+Let's assume that  a \(\pm\) b \(\in\) \(\mathbb{Q}\)
+
+Since a \(\in\) \(\mathbb{Q}\), we can write a as fraction in reduced form: a = \(\frac{n}{m}\), n,m \(\in\) \(\mathbb{Z}\)
+
+w.l.o.g consider addition case.
+
+a + b \(\in\) \(\mathbb{Q}\) means that a + b can be written in reduced form: a + b =  \(\frac{p}{q}\), p,q \(\in\) \(\mathbb{Z}\)
+
+Then, 
+
+b =  \(\frac{p}{q}\) - a
+
+b = \(\frac{p}{q}\) - \(\frac{n}{m}\)
+
+b = \(\frac{mp - nq}{qm}\) 
+
+mp,nq, and qm are products of integers, therefore they are also integers. 
+
+(mp - nq) is the difference between two integers, so it is also an integer.
+
+thus, b = \(\frac{mp - nq}{qm}\) where (mp-nq), qm \(\in\) \(\mathbb{Z}\)
+
+This means that b \(\in\) \(\mathbb{Q}\), which contradicts with b \(\notin\) \(\mathbb{Q}\).
+
+So our assumption was wrong, the opposite must be true. 
+
+Therefore a \(\pm\) b \(\notin\) \(\mathbb{Q}\)                \(\blacksquare\)\\\\
+
+
+
+(b) Proof by contradiction also applies in this question.
+
+Let's have four distinct integers a, b, c, d, and assume that they are all smaller or equal to 11.
+
+Their average is 10, so their sum, a + b + c + d must be 40.
+
+The greatest number we can have is 11, the second greatest is 10, the third greatest is 9, and the fourth greatest is 8.
+
+The sum of these number is the greatest sum:
+
+S = 11 + 10 + 9 + 8 = 38, which is still smaller than 40 so their average is smaller than 10. Therefore the average of these four number can never reach 10. This contradicts with the initial condition which says that their average is 10.
+
+The assumption was wrong, The opposite must be true, so not all numbers are smaller or equal to 11, which implies that at least one number must be greater than 11.  \(\blacksquare\)
+
+
+
+
+
+\end{solution}
+
+
+\end{document}

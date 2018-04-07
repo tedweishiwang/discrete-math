@@ -1,0 +1,319 @@
+\documentclass{article} 
+
+\usepackage{amsmath,amsthm,amssymb}
+
+\newtheorem{problem}{Problem} 
+
+\theoremstyle{definition} 
+
+\newtheorem*{solution}{Solution} 
+
+\begin{document} \title{Assignment 1} 
+
+\author{Weishi Wang, ID 260540022} 
+
+\date{\today}
+
+\maketitle
+
+\begin{problem} 
+
+Use a truth table to determine if each statement is a tautology, contradiction, or contingency.
+
+(a) (P \(\vee\) Q) \(\Rightarrow\) \(\neg\)P \\
+
+(b) (P \(\Leftrightarrow\) Q) \(\wedge\) (Q \(\Leftrightarrow\) R) \(\Rightarrow\) (P \(\Leftrightarrow\) R)\\
+
+(c) [(P \(\oplus\) Q) \(\oplus\) \(\neg\)Q] \(\Leftrightarrow\) P, where P \(\oplus\) Q is defined by the following truth table:\\
+
+\begin{displaymath}
+\begin{array}{ c|c|c }
+% |c c|c| means that there are three columns in the table and
+% a vertical bar '|' will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter 'c' means the value will be centered within the column,
+% letter 'l', left-aligned, and 'r', right-aligned.
+P & Q & P \oplus Q \\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & F\\
+T & F & T\\
+F & T & T\\
+F & F & F\\
+\end{array}
+\end{displaymath}
+\\
+\end{problem}
+
+
+\begin{solution} Solution for problem 1:\\
+
+(a)
+\begin{displaymath}
+\begin{array}{ c|c|c|c|c }
+% |c c|c| means that there are three columns in the table and
+% a vertical bar '|' will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter 'c' means the value will be centered within the column,
+% letter 'l', left-aligned, and 'r', right-aligned.
+P & Q & \neg P & P \vee Q & (P \vee Q) \Rightarrow \neg P  \\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & F & T & F\\
+T & F & F & T & F\\
+F & T & T & T & T\\
+F & F & T & F & T\\
+\end{array}
+\end{displaymath}
+
+Thus, this is a contingency.\\\\
+
+
+(b)
+\begin{displaymath}
+\begin{array}{ c|c|c|c|c|c|c|c }
+% |c c|c| means that there are three columns in the table and
+% a vertical bar '|' will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter 'c' means the value will be centered within the column,
+% letter 'l', left-aligned, and 'r', right-aligned.
+P & Q & R & P \Leftrightarrow Q & Q \Leftrightarrow R & P \Leftrightarrow R &  (P \Leftrightarrow Q) \wedge (Q \Leftrightarrow R) &  (P \Leftrightarrow Q) \wedge (Q \Leftrightarrow R) \Rightarrow (P \Leftrightarrow R)  \\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & T & T & T & T & T & T\\
+T & T & F & T & F & F & F & T\\
+T & F & T & F & F & T & T & T\\
+T & F & F & F & T & F & F & T\\
+F & T & T & F & T & F & F & T\\
+F & T & F & F & F & T & T & T\\
+F & F & T & T & F & F & F & T\\
+F & F & F & T & T & T & T & T\\
+\end{array}
+\end{displaymath}
+Thus, This is a tautology.\\\\
+
+
+(c)
+\begin{displaymath}
+\begin{array}{ c|c|c|c|c|c }
+% |c c|c| means that there are three columns in the table and
+% a vertical bar '|' will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter 'c' means the value will be centered within the column,
+% letter 'l', left-aligned, and 'r', right-aligned.
+P & Q & P \oplus Q & \neg Q & (P \oplus Q) \oplus \neg Q  & [(P \oplus Q) \oplus \neg Q] \Leftrightarrow P\\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & F & F & F & F\\
+T & F & T & T & F & F\\
+F & T & T & F & T & F\\
+F & F & F & T & T & F\\
+\end{array}
+\end{displaymath}
+Thus, this is a contradiction.
+
+\break
+
+\end{solution}
+
+
+\begin{problem}
+
+Verify the following statements using only identities (see the list posted on MyCourese). Show all of your work and name the identity or identites used in each step.
+
+(a) [(P \(\Rightarrow\) Q) \(\wedge\) P] \(\Rightarrow\) Q is a tautology\\
+
+(b) \(\neg\)(P \(\wedge\) Q) \(\wedge\) (Q \(\Rightarrow\) P) \(\equiv\) \(\neg\)Q\\
+
+(c) \(\neg\)[(P \(\vee\) Q) \(\vee\) [(Q \(\vee\) \(\neg\)R) \(\wedge\) (P \(\vee\) R)]] \(\equiv\) \(\neg\)P \(\wedge\) \(\neg\)Q
+\\
+\\
+\end{problem}
+
+
+\begin{solution}
+Solution for problem 2:\\
+
+(a)\\
+
+[(P \(\Rightarrow\) Q) \(\wedge\) P] \(\Rightarrow\) Q
+
+\(\equiv\) [(\(\neg\)P \(\vee\) Q) \(\wedge\) P] \(\Rightarrow\) Q (Conditional)
+
+\(\equiv\) [(\(\neg\)P \(\wedge\) P) \(\vee\) (Q \(\wedge\) P)] \(\Rightarrow\) Q (Distributive)
+
+\(\equiv\) [(\(\mathbb{F}\)) \(\vee\) (Q \(\wedge\) P)] \(\Rightarrow\) Q (Complement)
+
+\(\equiv\) (Q \(\wedge\) P) \(\Rightarrow\) Q (Identity)
+
+\(\equiv\) \(\neg\)(Q \(\wedge\) P) \(\vee\) Q (Conditional)
+
+\(\equiv\) (\(\neg\)Q \(\vee\) \(\neg\)P) \(\vee\) Q (DeMorgan's laws)
+
+\(\equiv\) \(\neg\)Q \(\vee\) Q \(\vee\) \(\neg\)P (Associative)
+
+\(\equiv\) \(\mathbb{T}\) \(\vee\) \(\neg\)P (Complement)
+
+\(\equiv\) \(\mathbb{T}\) (Domination)
+
+Thus, this is indeed a tautology.\\\\
+
+(b)\\
+
+\(\neg\)(P \(\wedge\) Q) \(\wedge\) (Q \(\Rightarrow\) P)
+
+\(\equiv\) (\(\neg\)P \(\vee\) \(\neg\)Q) \(\wedge\) (Q \(\Rightarrow\) P) (DeMorgan's laws)
+
+\(\equiv\) (\(\neg\)P \(\vee\) \(\neg\)Q) \(\wedge\) (\(\neg\)Q \(\vee\) P) (Conditional)
+
+\(\equiv\) \(\neg\)Q \(\vee\) (\(\neg\)P \(\wedge\) P) (Factorization)
+
+\(\equiv\) \(\neg\)Q \(\vee\) \(\mathbb{F}\) (Complement)
+
+\(\equiv\) \(\neg\)Q (Identity)\\\\
+
+(c)\\
+
+\(\neg\)[(P \(\vee\) Q) \(\vee\) [(Q \(\vee\) \(\neg\)R) \(\wedge\) (P \(\vee\) R)]]
+
+\(\equiv\) \(\neg\)[[(P \(\vee\) Q) \(\vee\) (Q \(\vee\) \(\neg\)R)] \(\wedge\) [(P \(\vee\) Q) \(\vee\) (P \(\vee\) R)]] (Distributive)
+
+\(\equiv\) \(\neg\)[(P \(\vee\) Q \(\vee\) Q \(\vee\) \(\neg\)R) \(\wedge\) (P \(\vee\) Q \(\vee\) P \(\vee\) R)] (Associative)
+
+\(\equiv\) \(\neg\)[(P \(\vee\) Q \(\vee\) \(\neg\)R) \(\wedge\) (P \(\vee\) Q \(\vee\) R)] (Idempotent)
+
+\(\equiv\) \(\neg\)[(P \(\vee\) Q) \(\vee\) (\(\neg\)R \(\wedge\) R)] (Factorization)
+
+\(\equiv\) \(\neg\)[(P \(\wedge\) Q) \(\vee\) \(\mathbb{F}\)] (Complement)
+
+\(\equiv\) \(\neg\)(P \(\vee\) Q) (Identity)
+
+\(\equiv\) \(\neg\)P \(\wedge\) \(\neg\)Q (DeMorgan's laws)
+
+\end{solution}
+
+\break
+
+\begin{problem}
+Of the following conditional and biconditional statements, which are true and which are false? Briefly justify your answers.
+
+(a) \(\pi\) is an integer if and only if \(\sqrt{e+3}\) is a vowel.\\
+
+(b) 0 $>$ 1 whenever 2 + 2 = 4.\\
+
+(c) If (a) implies (b), then pigs cannot fly.\\\\
+\end{problem}
+
+
+\begin{solution} Solution for problem 3:\\
+
+(a)\\
+
+Let P = ``\(\sqrt{e+3}\) is a vowel" and Q = ``\(\pi\) is an integer".
+
+The statement claims that P \(\Leftrightarrow\) Q.
+
+ P \(\Leftrightarrow\) Q \(\equiv\) (P \(\Rightarrow\) Q) \(\wedge\) (Q \(\Rightarrow\) P)
+ 
+ \(\equiv\) (\(\neg\)P \(\vee\) Q) \(\wedge\) (\(\neg\)Q \(\vee\) P)
+ 
+ \(\neg\)P = ``\(\sqrt{e+3}\) is not a vowel". This statement is true.
+ 
+ So (\(\neg\)P \(\vee\) Q) is true.
+ 
+ Also, \(\neg\)Q = `` \(\pi\) is not an integer". This statement is also true.
+ 
+ So (\(\neg\)Q \(\vee\) P) is true as well.
+ 
+ Therefore, (\(\neg\)P \(\vee\) Q) \(\wedge\) (\(\neg\)Q \(\vee\) P) is true
+ 
+ Thus, P \(\Leftrightarrow\) Q is true.
+ 
+ The statement is true.\\\\
+ 
+ 
+ (b)\\
+ 
+ Let P = ``2 + 2 = 4" and Q = ``0 $>$ 1".
+ 
+ The statement claims that P \(\Rightarrow\) Q.
+ 
+ P \(\Rightarrow\) Q \(\equiv\) \(\neg\)P \(\vee\) Q
+ 
+ \(\neg\)P = ``2 + 2 \(\neq\) 4", which is false.
+ 
+ Also, since 0 $<$ 1, Q is false.
+ 
+ \(\neg\)P \(\vee\) Q \(\equiv\) \(\mathbb{F}\) \(\vee\) \(\mathbb{F}\) \(\equiv\) \(\mathbb{F}\)
+ 
+ Thus,  P \(\Rightarrow\) Q is false.
+ 
+ The statement is false.\\\\
+ 
+ (c)\\
+ 
+ Let P = ``(a)", Q = ``(b)" and R = ``pigs cannot fly"
+ 
+ The statement claims that (P \(\Rightarrow\) Q) \(\Rightarrow\) R.
+ 
+ P \(\Rightarrow\) Q \(\equiv\) \(\neg\)P \(\vee\) Q,
+ 
+ From (a) and (b), we know that (a) is true and (b) is false. 
+ 
+ Therefore, P is true and Q is false.
+ 
+ \(\neg\)P is false.
+ 
+ P \(\Rightarrow\) Q \(\equiv\) \(\neg\)P \(\vee\) Q \(\equiv\) \(\mathbb{F}\) \(\vee\) \(\mathbb{F}\) \(\equiv\) \(\mathbb{F}\) 
+ 
+ Then,
+ 
+ (P \(\Rightarrow\) Q) \(\Rightarrow\) R
+ 
+ \(\equiv\) \(\mathbb{F}\) \(\Rightarrow\) R
+ 
+ \(\equiv\) \(\neg\) \(\mathbb{F}\) \(\vee\) R
+ 
+ \(\equiv\) \(\mathbb{T}\) \(\vee\) R
+ 
+ \(\equiv\) \(\mathbb{T}\)
+ 
+ The statement is true.
+ 
+\end{solution}
+
+\break
+
+\begin{problem}
+Symbolize the following English sentences in logic, using the abbreviation scheme provided.
+
+(a) ``Thunder only happens when it's raining."
+
+T: thunder happens; R: it's raining\\
+
+(b) ``For every positive integer n there is a prime number that is bigger than n but at most 2n."
+
+I(x) : x is a positive integer; P(x) : x is a prime number; B(x,y) : x is bigger than y.\\
+
+(c) ``Goldbach's Conjecture is true if every even integer greater than 2 can be written as the sum of two primes."
+
+G : Goldbach's Conjecture is true; E(x) : x is an even integer; T(x) : x is greater than 2; P(x) : x is the sum of two primes.\\\\
+\end{problem}
+
+\begin{solution}
+Solution for problem 4:\\
+
+(a)\\
+
+R \(\Rightarrow\) T\\\\
+
+(b)\\
+
+\(\forall\) n I(n) \(\exists\) x [P(x) \(\wedge\) B(x,n) \(\wedge\) \(\neg\) B(x,2n)]\\\\
+
+(c)\\
+
+\(\forall\) x [(E(x) \(\wedge\) T(x) \(\wedge\) P(x)) \(\Rightarrow\) G]
+
+
+
+
+\end{solution}
+
+\end{document}
